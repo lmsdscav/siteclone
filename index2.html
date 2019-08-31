@@ -1,38 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
 <head>
-    <title>ReadImageDemo</title>
+<meta charset="utf-8">
+<title>JS/jQuery图片查看器viewer.js</title>
+<link rel="stylesheet" href="css/viewer.min.css">
+<style>
+* { margin: 0; padding: 0;}
+#imgdiv{
+	width: 980px;
+	height: 30px;
+	margin:0 auto;
+	background: #ccc;
+}
+ 
+a {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	color: #000;
+	line-height: 30px;
+	text-decoration: none;
+ 
+}
+a:hover{
+	display: inline-block;
+	color: #000;
+	text-decoration: none;
+}
+</style>
 </head>
+ 
 <body>
-    <input type="file" id="selectFiles" onchange="dealSelectFiles()" multiple webkitdirectory>
-    <canvas id="myCanvas" width=1440 height=900></canvas>
+<center>
+	<h1>点击图片名称展示图片大图</h1>
+</center>
+<!-- 图片容器 -->
+<div id="imgdiv">
+		<a  href="#">tibet-6.jpg</a>
+		<a  href="#">tibet-5.jpg</a>
+</div>
  
-    <script type="javascript">
-        var imgPosX = 0;
-        var imgWidth = 256;
-        function dealSelectFiles(){
-            /// get select files.
-            var selectFiles = document.getElementById("selectFiles").files;
+<!-- 引入js -->
+<script src="js/jquery.min.js"></script>
+<!-- <script src="js/viewer-jquery.min.js"></script> -->
+<script src="js/viewer.min.js"></script>
  
-            for(var file of selectFiles){
-                console.log(file.webkitRelativePath);
-                /// read file content.
-                var reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onloadend = function(){
-                    /// deal data.
-                    var img = new Image();
-                    /// after loader, result storage the file content result.
-                    img.src = this.result;  
-                    img.onload = function(){
-                        var myCanvas = document.getElementById("myCanvas");
-                        var cxt = myCanvas.getContext('2d');
-                        cxt.drawImage(img, imgPosX, 0);
-                        imgPosX += imgWidth;
-                    }
-                }
-            }
-        }
-    </script>
+<!-- 写一个js -->
+<script type="text/javascript">
+	//点击a标签触发
+	$("a").click(function(){
+		//先获取 这个a 的 text 属性
+		var img_name = $(this).text();
+		//获取图片名称前缀
+		var imgname = img_name.split(".")[0];
+		//拼装完整的img 的路径
+		var imgnameall =  "./img/thumbnails/"+img_name;
+		if($("#"+imgname).length > 0){
+			// img元素已经存在，不需要再页面添加img元素了
+			var viewer = new Viewer(document.getElementById('imgdiv'), {
+				//重新装载一次，在之后添加的图片也可以使用
+					 show: function (){
+						viewer.update();
+				  		},
+				     hiden: function() {
+						viewer.destroy();
+					 }
+			  	} 
+			  );
+			$("#"+imgname).trigger("click");
+		}else{
+			// 调用写好的js
+			$("#imgdiv").append('<img  id="'+imgname+'" src="'+imgnameall+'" style="display:none;" />');
+			//修改样式，展示图片
+			//$("#"+imgname).css("display","block");
+			//为新添加的元素添加一个click事件
+			var viewer = new Viewer(document.getElementById('imgdiv'), {
+				//重新装载一次，在之后添加的图片也可以使用
+				//显示的时候 重新装载viewer
+					 show: function (){
+						viewer.update();
+				  		},
+				//点击关闭按钮，将viewer销毁
+				 	hiden: function() {
+						viewer.destroy();
+					 }
+			  	} 
+			  );
+			$("#"+imgname).trigger("click");
+			//$("#"+imgname).css("display","none");
+		}
+	});
+</script>
 </body>
 </html>
