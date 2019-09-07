@@ -14,7 +14,9 @@
   <button id='test' TextSize='70'>测试按钮</button>
       <script language="text/JavaScript">
         var sd = document.getElementById("test")
+        setInterval(function(){
         sd.onclick = function(){
           alert("测试成功")
         }
+        },0)
       </script>
