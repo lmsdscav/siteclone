@@ -1,5 +1,7 @@
 <script type="text/Javascript">
 var s = prompt("请输入你的版本号")
-if (s!="" and s!=" "){
-if (s!="3.5"){alert("请检查你的版本是否为3.5，或输入错误")}else{alert("已是最新版本")}}else{alert("无内容")}
+if (s!="" and s!=" ") {onrp()}else{alert("无输入")}
+function onrp(){
+if (s!="3.5") {alert("输入的版本有误或版本不是新版，请检查，最新3.5")}else{alert("你的版本是最新版")}
+}
 </script>
