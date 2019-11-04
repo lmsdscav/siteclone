@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .mcontiner {
+            position: relative;
+            width: 400px;
+            height: 34px;
+            background-color: #ccc;
+            /*border: 1px solid #000;*/
+            margin: 50px auto;
+        }
+        .btn {
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 32px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            cursor: pointer;
+            color: #ccc;
+            text-align: center;
+            line-height: 32px;
+            z-index: 5;
+        }
+        .text {
+            position: absolute;
+            width: 100%;
+            line-height: 34px;
+            text-align: center;
+            z-index: 3;
+        }
+        .bg {
+            position: absolute;
+            height: 100%;
+            background-color: red;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="mcontiner">
+    <div class="btn">>></div>
+    <p class="text">拖动滑块完成验证</p>
+    <div class="bg"></div>
+</div>
+<script>
+    window.οnlοad=function(){
+        //获取元素
+        var mc = document.getElementsByClassName("mcontiner")[0];
+        var btn = document.querySelector(".btn");
+        var mtext = document.getElementsByTagName("p")[0];
+        var bg = document.querySelector(".bg");
+        var boo = false;
+        //添加事件
+        btn.οnmοusedοwn= function (event) {
+            event = event || window.event;
+            var downX = event.clientX;
+            btn.οnmοusemοve= function (event) {
+                event = event || window.event;
+                var moveX = event.clientX-downX;
+                var chaX = mc.offsetWidth - btn.offsetWidth;
+                if(moveX >= 0 && moveX < chaX){
+                    this.style.left = moveX + "px";
+                    bg.style.width = moveX + "px";
+                }
+                if(moveX >= chaX){
+                    mtext.innerHTML = "<b>验证通过</b>";
+                    this.style.left = chaX + "px";
+                    bg.style.width = chaX + "px";
+                    bg.style.backgroundColor = "green";
+                    btn.onmousedown = null;
+                    btn.onmousemove = null;
+                    boo = true;
+                }
+ 
+            }
+        };
+        window.οnmοuseup=function(){
+            btn.onmousemove = null;
+            if(!boo){
+                btn.style.left = 0;
+                bg.style.width = 0;
+            }
+        }
+    }
+</script>
+</body>
+</html>
