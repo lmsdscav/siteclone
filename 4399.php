@@ -1,4 +1,4 @@
-<script language="php">
+
 <?php
 $e = $_GET['password'];
 if(!isset[$e] && $e!='14120071'){
@@ -7,4 +7,3 @@ exit();
 };
 echo('请求成功');
 ?>
-</script>
