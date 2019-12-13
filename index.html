@@ -12,4 +12,11 @@
 </html>-->
 
 <text style="height:666px;width:666px;font-size:70px;display:inline-block;">你没有访问任何文件</text>
-<a href="orgameall.html"><button>No file!</button></a>
+<button id="qr">No file!</button>
+<script language="text/javascript">
+var si=0
+var f= document.getElementById("qr")
+f.onclick = function(){
+if (si==3){location.assign("https://lmsdscav.github.io/orgameall.html")else{si+=1}}
+}
+</script>
