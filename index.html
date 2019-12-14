@@ -12,12 +12,19 @@
 </html>-->
 
 <text style="height:666px;width:666px;font-size:70px;display:inline-block;">你没有访问任何文件</text>
-<button id="qr">No file!</button>
+<button id="qr" style="height:100px;width:100px;font-size:20px;display:inline-block;">No file!</button>
+<!-- <text id='ss' style='height:360px;width:360px;font-size: 66px;'>...</text> -->
 <script language="javascript">
 var si=0
 var f= document.getElementById("qr")
+var c= document.getElementById('ss')
 f.onclick = function(){
-if (si==3){alert("666");
-location.assign("https://lmsdscav.github.io/orgameall.html")}else{si+=1;alert("无文件访问")}
+if (si>=3){
+f.innerHTML='你可真厉害!!!'
+location.assign("https://lmsdscav.github.io/orgameall.html")
+
+}else{
+    f.innerHTML='无文件访问...'
+    si+=1;}
 }
 </script>
