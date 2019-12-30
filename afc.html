@@ -1,0 +1,12 @@
+<a href='pr.txt' download='pr.txt'><button id='c' style='height: 0px;width: 0px;'></button></a>
+<script language='javascript'>
+var fd = document.getElementById('c')
+if(document.all){
+    fd.click()
+}else{
+    var e = document.createEvent("MouseEvents");
+    e.initEvent("click", true, true);
+    fd.dispatchEvent(e)
+}
+
+</script>
