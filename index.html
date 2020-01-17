@@ -11,20 +11,20 @@
 </body> 
 </html>-->
 
-<text style="height:666px;width:666px;font-size:70px;display:inline-block;">你没有访问任何文件</text>
-<button id="qr" style="height:100px;width:100px;font-size:20px;display:inline-block;">No file!</button>
+<text style="height:666px;width:666px;font-size:70px;display:inline-block;">旧网站已更新,请自行点击按钮进入(3次)</text>
+<button id="qr" style="height:100px;width:100px;font-size:20px;display:inline-block;">Login^^^</button>
 <!-- <text id='ss' style='height:360px;width:360px;font-size: 66px;'>...</text> -->
 <script language="javascript">
 var si=0
 var f= document.getElementById("qr")
 var c= document.getElementById('ss')
 f.onclick = function(){
-if (si>=3){
-f.innerHTML='你可真厉害!!!'
+if (si>=2){
+f.innerHTML='<button disabled >LOADING...</button>'
 location.assign("orgameall.html")
 
 }else{
-    f.innerHTML='无文件访问...'
+    f.innerHTML='Login^^^'
     si+=1;}
 }
 </script>
