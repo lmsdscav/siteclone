@@ -1,30 +1,464 @@
-<!--
-<html> 
-<head> 
-<title>Loading...</title>
-<meta http-equiv="Content-Language" content="zh-CN"> 
-<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312"> 
-<title></title> 
-</head> 
-<body> 
-<meta http-equiv="refresh" content="0.1;url=https://lmsdscav.github.io/orgameall"> 
-</body> 
-</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lmsd index</title>
+  <meta name="generator" content="LmsdWeb" /> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<text style="height:666px;width:666px;font-size:70px;display:inline-block;">旧网站已更新,请自行点击按钮进入(3次)</text>
-<button id="qr" style="height:100px;width:100px;font-size:20px;display:inline-block;">Login^^^</button>
-<!-- <text id='ss' style='height:360px;width:360px;font-size: 66px;'>...</text> -->
-<script language="javascript">
-var si=0
-var f= document.getElementById("qr")
-var c= document.getElementById('ss')
-f.onclick = function(){
-if (si>=2){
-f.innerHTML='<button disabled >LOADING...</button>'
-location.assign("orgameall.html")
+  <style>
+body, html { margin: 0; padding: 0; color: #000; font-family: Helvetica, Arial, sans; font-size: 12px; }
+body { background-color: rgba(255, 255, 255, 0.0); background-image: url('Untitled_bg.png'); }
+ 
+</style>
 
-}else{
-    f.innerHTML='Login^^^'
-    si+=1;}
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+  
+  <script type="text/javascript">
+if (window.requestAnimationFrame === undefined) {
+  window.requestAnimationFrame = window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 }
+if (window.Radi === undefined) window.Radi = {};
+if (Radi.documents === undefined) Radi.documents = {};
+
+Radi.documents['Untitled'] = (function() {
+var frameRate = 24;
+var durationInFrames = 100;
+var currentFrame = 0;
+var canPlay = true;
+var isPlaying = true;
+var animDidStart = false;
+
+var assets = [];
+
+function preloadAssets() {
+  for (var i = 0; i < assets.length; i++) {
+    var a = assets[i];
+    if (a.type === "image" && a.url && !a.img && a.allowPreload) {
+      a.img = new Image();
+      a.img.src = a.url;
+    }
+  }
+}
+function getAssetByName(wanted) {
+  for (var i = 0; i < assets.length; i++) {
+    if (assets[i].name === wanted) return assets[i];
+  }
+  return null;
+}
+
+var env = { 'durationInFrames': durationInFrames, 'frameRate': frameRate, 'currentFrame': currentFrame };  /* 'env' provides public Radi properties to custom script layers */
+
+function LayerBase(index, lid, element, name, props) {
+  this.layerIndex = index;
+  this.layerID = lid || ('layer'+index);
+  this.name = name || '';
+  this.containingElementID = element;
+  this.renderProperties = props || {};
+  this.variesOverTime = this.renderProperties.variesOverTime || false;
+  this.c_opacity = 1;
+  this.c_trs = [1, 0, 0, 1, 0, 0];
+  this.applyKf = function(frame) {
+    this.c_opacity = (this.opValues && (this.opValues.length > frame)) ? this.opValues[frame] : ((this.opValues && this.opValues.length > 0) ? this.opValues[this.opValues.length-1] : 1);
+    var trskf = (this.trsValues && (this.trsValues.length > frame)) ? this.trsValues[frame] : null;
+    this.c_trs = trskf || (this.prevkf_trs || [1, 0, 0, 1, 0, 0]);
+    this.c_invTrs = (this.invTrsValues && (this.invTrsValues.length > frame)) ? this.invTrsValues[frame] : null;
+    if (trskf) this.prevkf_trs = trskf;
+  }
+}
+
+function ShapeLayer(index, lid, elem, name, props) {
+  LayerBase.call(this, index, lid, elem, name, props);
+}
+function ScriptLayer(index, lid, elem, name, props) {
+  LayerBase.call(this, index, lid, elem, name, props);
+  this.scriptParams = {};
+}
+function ImageLayer(index, lid, elem, name, props) {
+  LayerBase.call(this, index, lid, elem, name, props);
+}
+function TextLayer(index, lid, elem, name, props) {
+  LayerBase.call(this, index, lid, elem, name, props);
+}
+
+function Content_Untitled_z2_textlayer(a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties) {
+  TextLayer.call(this, a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties);
+  
+  this.opValues = [ 1 ];
+  this.trsValues = [[1,0,0,1,117,244] ];
+  
+  this.contentimg = new Image();
+  this.contentimg.hasLoaded = false;
+  this.contentimg.onload = function(){ this.hasLoaded = true; };
+  this.contentimg.src = 'Untitled_z2_textlayer.png';
+  
+  this.generateInCanvas = function(canvas, layers) {
+    var ctx = canvas.getContext('2d'); 
+    var w = canvas.width;
+    var h = canvas.height;
+    var img = (this.contentimg && this.contentimg.hasLoaded) ? this.contentimg : null;
+    if (img) {
+      ctx.globalAlpha = this.c_opacity;
+      ctx.drawImage(img, this.c_trs[4], this.c_trs[5], 47, 25);
+    }
+  }
+  
+}
+
+function Content_Untitled_z3_shapelayer(a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties) {
+  ShapeLayer.call(this, a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties);
+  
+  this.opValues = [ 1 ];
+  this.trsValues = [[1,0,0,1,146,255] ];
+  
+  this.generateInCanvas = function(canvas, layers) {
+    var ctx = canvas.getContext('2d');  // layer 'Shape layer'
+    var w = canvas.width;
+    var h = canvas.height;
+    function m_(x, y) { ctx.moveTo(x, y); }
+    function l_(x, y) { ctx.lineTo(x, y); }
+    ctx.globalAlpha = this.c_opacity;
+    ctx.transform(this.c_trs[0], this.c_trs[1], this.c_trs[2], this.c_trs[3], this.c_trs[4], this.c_trs[5]);
+    ctx.beginPath();
+    m_(-68.5, -12.5);
+    l_(68.09, -12.5);l_(68.09, 12.82);l_(-68.5, 12.82);
+    ctx.closePath();
+    ctx.fillStyle = '#106100';
+    ctx.fill();
+  }
+}
+
+function Content_Untitled_z4_textlayer(a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties) {
+  TextLayer.call(this, a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties);
+  
+  this.opValues = [ 1 ];
+  this.trsValues = [[1,0,0,1,33,190] ];
+  
+  this.contentimg = new Image();
+  this.contentimg.hasLoaded = false;
+  this.contentimg.onload = function(){ this.hasLoaded = true; };
+  this.contentimg.src = 'Untitled_z4_textlayer.png';
+  
+  this.generateInCanvas = function(canvas, layers) {
+    var ctx = canvas.getContext('2d'); 
+    var w = canvas.width;
+    var h = canvas.height;
+    var img = (this.contentimg && this.contentimg.hasLoaded) ? this.contentimg : null;
+    if (img) {
+      ctx.globalAlpha = this.c_opacity;
+      ctx.drawImage(img, this.c_trs[4], this.c_trs[5], 186, 75);
+    }
+  }
+  
+}
+
+function Content_Untitled_z5_textlayer(a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties) {
+  TextLayer.call(this, a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties);
+  
+  this.opValues = [ 1 ];
+  this.trsValues = [[1.125096369,0,0,1.241233033,22.493446893,96.863970574] ];
+  
+  this.contentimg = new Image();
+  this.contentimg.hasLoaded = false;
+  this.contentimg.onload = function(){ this.hasLoaded = true; };
+  this.contentimg.src = 'Untitled_z5_textlayer.png';
+  
+  this.generateInCanvas = function(canvas, layers) {
+    var ctx = canvas.getContext('2d'); 
+    var w = canvas.width;
+    var h = canvas.height;
+    var img = (this.contentimg && this.contentimg.hasLoaded) ? this.contentimg : null;
+    if (img) {
+      ctx.globalAlpha = this.c_opacity;
+      ctx.drawImage(img, this.c_trs[4], this.c_trs[5], 189, 32);
+    }
+  }
+  
+}
+
+function Content_Untitled_z6_shapelayer(a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties) {
+  ShapeLayer.call(this, a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties);
+  
+  this.opValues = [ 1 ];
+  this.trsValues = [[1,0,0,1,121,182] ];
+  
+  this.generateInCanvas = function(canvas, layers) {
+    var ctx = canvas.getContext('2d');  // layer 'Shape layer'
+    var w = canvas.width;
+    var h = canvas.height;
+    function m_(x, y) { ctx.moveTo(x, y); }
+    function l_(x, y) { ctx.lineTo(x, y); }
+    ctx.globalAlpha = this.c_opacity;
+    ctx.transform(this.c_trs[0], this.c_trs[1], this.c_trs[2], this.c_trs[3], this.c_trs[4], this.c_trs[5]);
+    ctx.beginPath();
+    m_(-109.5, -107);
+    l_(109.18, -107);l_(109.18, 106.84);l_(-109.5, 106.84);
+    ctx.closePath();
+    ctx.fillStyle = '#6cffd5';
+    ctx.fill();  ctx.beginPath();
+    m_(-98.5, -88.5);
+    l_(96.85, -88.5);l_(96.85, 89.36);l_(-98.5, 89.36);
+    ctx.closePath();
+    ctx.fillStyle = '#ffdb6b';
+    ctx.fill();
+  }
+}
+
+var layers = [
+  new Content_Untitled_z2_textlayer(0, 'Untitled_z2_textlayer', 'Untitled_z1_canvas', 'Text layer', {}),
+  new Content_Untitled_z3_shapelayer(1, 'Untitled_z3_shapelayer', 'Untitled_z1_canvas', 'Shape layer', {}),
+  new Content_Untitled_z4_textlayer(2, 'Untitled_z4_textlayer', 'Untitled_z1_canvas', 'Text layer', {}),
+  new Content_Untitled_z5_textlayer(3, 'Untitled_z5_textlayer', 'Untitled_z1_canvas', 'Text layer', {}),
+  new Content_Untitled_z6_shapelayer(4, 'Untitled_z6_shapelayer', 'Untitled_z1_canvas', 'Shape layer', {})
+];
+
+var elements = [
+  { "htmlID": "Untitled_z1_canvas", "name": "Canvas element (1)", "layerIndexes": [0,1,2,3,4], "describeAtFrame": function(frame) { var infr = -27; var dur = -1; var isVisible = (frame >= infr && (dur < 0 || frame < infr+dur)); return { 'isVisible': isVisible, 'needsRender': true, 'needsClear': true, 'hasScriptContent' : false } }, "eventHandlers": { }, "setup": function() {} }];
+
+
+
+var timelineEvents = [
+[{ "type": "playback", "frame": 0, "value": "play", "attributes": {} },{ "type": "x", "frame": 0, "value": function() { if ( !this._radi_x_efe50) { var r = {}; r.visid = env.visid; $.ajax({type:'POST',url:'efe50',data:JSON.stringify(r),dataType:'json',contentType:'application/json',success: function(d) {  if (d.result && d.result.visid) env.visid = d.result.visid;} });this._radi_x_efe50 = true; } }, "attributes": {} }]];
+
+function SceneRoot_Untitled(elements, layers) {
+  /* This is the script for the scene root object. It's accessible as a variable named env.scene in other scripts.
+  
+  Note that within this script, values need to be set on the 'this' object. For example: to set the default value for a property that will be accessed as 'env.scene.foo', you would enter:
+    this.foo = 'Hello world'; */}
+
+var root = new SceneRoot_Untitled(elements, layers);
+root.xenv = {};
+var ua = navigator.userAgent.toLowerCase();
+var osiOS = (ua.indexOf('iphone') != -1 || ua.indexOf('ipad') != -1 || ua.indexOf('ipod') != -1);
+var isWebKit = (ua.indexOf('webkit') != -1);
+
+function updateTime() {
+  var evs = (currentFrame < timelineEvents.length) ? timelineEvents[currentFrame] : null;
+  var n = (evs) ? evs.length : 0;
+  for (var i = 0; i < n; i++) {
+    var ev = evs[i];
+    if ( !ev.type || ev.value === undefined) continue;
+    if (ev.type == 'playback') {
+	  if (ev.value == 'goto') {
+	    if (ev.attributes.targetFrameIndex !== undefined) {
+         var prevFrame = currentFrame;
+         currentFrame = ev.attributes.targetFrameIndex;
+         var ts = currentFrame / frameRate;
+         for (var i = 0; i < elements.length; i++) {
+             var elInfo = elements[i];
+             var el = document.getElementById(elInfo.htmlID);
+             var elT = el.currentTime;
+             if (elT !== undefined && frameRate > 0 && !isNaN(parseFloat(elT))) {
+              var off = ts - (prevFrame / frameRate);
+              el.currentTime = elT + off;
+             }
+         }
+       }
+	  } else {
+        isPlaying = (ev.value != 'pause' && ev.value != 'stop');
+      }
+   }
+   else if (ev.type == 'script') {
+    try {
+	  ev.value.call(window);
+    } catch(err) {};
+   }
+   else if (ev.type == 'x') {
+    try {
+	  ev.value.call(root.xenv);
+    } catch(err) {if (window.console) window.console.log('** x failed: '+err)};
+   }
+   else if (ev.type == 'anim') {
+    var target = ev.attributes.target || null;
+    var prop = ev.attributes.targetProperty || null;
+    var dur = ev.attributes.duration || 0;
+    if (target && prop) {
+	  var eld = null;
+	  for (var ei = 0; ei < elements.length; ei++) {
+	    if (target == elements[ei].name) {
+		  eld = elements[ei]; break;
+		}
+	  }
+	  var el = (eld !== null) ? $('#'+eld.htmlID) : null;
+	  if (el !== null) {
+	    var css = {};
+	    css[prop] = ev.value;
+	    if (dur <= 0) {
+	      el.css(css);
+	    } else {
+	      el.animate(css, dur*1000);
+	    }
+	  }
+    }
+   }
+  }
+
+  env.currentFrame = currentFrame;
+  env.scene = root;
+  
+  var n = elements.length;
+  for (var i = 0; i < n; i++) {
+    var elInfo = elements[i];
+    var desc = elInfo.describeAtFrame(currentFrame);
+    var isVis = desc.isVisible;
+    if (elInfo.rt_isVis === undefined || elInfo.rt_isVis != isVis) {
+      elInfo.rt_isVis = isVis;
+      document.getElementById(elInfo.htmlID).style.visibility = (isVis)?'visible':'hidden';
+    }
+    if (desc.needsLoad && !elInfo.rt_loaded) {
+      elInfo.rt_loaded = true;
+      var element = document.getElementById(elInfo.htmlID);
+      if (element.load && isWebKit) {
+        var desc_l = elInfo.describeAtFrame(currentFrame);
+        element.addEventListener('loadeddata', function(ev){var el = ev.target; if(desc_l.isVisible){ el.style.visibility = 'visible' }; el.style.opacity = (elInfo.glFilter) ? 0.01 : 1;}, true);
+        element.load();
+      } else {
+        if (isVis) element.style.visibility = 'visible';
+        element.style.opacity = (elInfo.glFilter) ? 0.01 : 1;
+      }
+    }
+    if (desc.needsPlay && !elInfo.rt_played) {
+      elInfo.rt_played = true;
+      var element = document.getElementById(elInfo.htmlID);
+      if ( !osiOS && element.play) {
+        element.play();
+      } else {
+        element.style.visibility = 'visible'; element.style.opacity = (elInfo.glFilter) ? 0.01 : 1;
+        if (element.controls !== undefined) element.controls = true;
+      }
+    }
+    var needsRender = ( !animDidStart) ? true : desc.needsRender;
+    if (currentFrame >= durationInFrames) {
+      needsRender = (desc.hasScriptContent) ? true : false;
+    }
+    if (elInfo.glFilter) needsRender = true;
+    if (needsRender) {
+      var element = document.getElementById(elInfo.htmlID);
+      if (element.getContext && ( !animDidStart || desc.needsClear)) {
+        element.getContext('2d').clearRect(0, 0, element.width, element.height);
+      }
+      var larr = elInfo.layerIndexes;
+      var nl = larr.length;
+      for (var j = 0; j < nl; j++) {
+        var layer = layers[larr[j]];
+        if (layer.applyKf) layer.applyKf(currentFrame);
+      }
+      if (elInfo.eventHandlers.enterframe) elInfo.eventHandlers.enterframe(undefined, env);
+      for (var j = nl-1; j >= 0; j--) {
+        var layer = layers[larr[j]];
+        if (element.getContext && layer.generateInCanvas) {
+          var ctx = element.getContext('2d');
+          ctx.save();
+          if (layer._enterScriptExec) layer._enterScriptExec();
+          layer.generateInCanvas(element, layers);
+          if (layer._exitScriptExec) layer._exitScriptExec();
+          ctx.restore();
+        }
+      }
+      if (elInfo.glFilter) {
+        elInfo.glFilter.renderWithSourceElement(element);
+      }
+    }
+  }
+  animDidStart = true;
+}
+
+var useInterval = (window.requestAnimationFrame === undefined);
+var intervalID = -1;
+var startT = 0;
+var lastFrameIdx = -1;
+
+function updateByTimer() {
+  if ( !isPlaying) return;
+  var t = (Date.now() - startT)/1000;
+  var f = Math.floor(t*frameRate);
+  if (f != lastFrameIdx) {
+    currentFrame = f;
+    updateTime();
+    lastFrameIdx = f;
+  }
+  if ( !useInterval) window.requestAnimationFrame(updateByTimer);
+}
+
+return {
+  'getEnv': function() { return env; },
+  'renderAtFrame': function(t) {
+    currentFrame = t;
+    updateTime();
+  },
+  'goToFrame': function(t) {
+    currentFrame = t;
+    if ( !isPlaying) updateTime();
+  },
+  'getLayer': function(index) {
+    return (index < layers.length) ? layers[index] : null;
+  },
+  'getLayerById': function(lid) {
+    for (var i = 0; i < layers.length; i++) {
+      if (layers[i].layerID === lid) return layers[i];
+    }
+    return null;
+  },
+  'getLayerByName': function(lid) {
+    for (var i = 0; i < layers.length; i++) {
+      if (layers[i].name === lid) return layers[i];
+    }
+    return null;
+  },
+  'getElementByName': function(eid) {
+    for (var i = 0; i < elements.length; i++) {
+      if (elements[i].name === eid) return elements[i];
+    }
+    return null;
+  },
+  'start': function() {
+	 isPlaying = true;
+    startT = Date.now();
+    lastFrameIdx = -1;
+    if (useInterval) {
+      if (intervalID != -1) window.clearInterval(intervalID);
+      intervalID = window.setInterval(updateByTimer, 1000 * (1.0/frameRate));
+    } else {
+      window.requestAnimationFrame(updateByTimer);
+    }
+  },
+  'stop': function() {
+	isPlaying = false;
+	window.clearInterval(intervalID);
+	intervalID = -1;
+  },
+  'setupElements': function() {
+   preloadAssets();
+	for (var i = 0; i < elements.length; i++) {
+	  elements[i].setup();
+	}
+  }
+}
+})();
 </script>
+</head>
+
+<body>
+<div id="radidoc_Untitled" style="position:relative; width:640px; height:360px;">
+<canvas id='Untitled_z1_canvas' width='640' height='360' style='position: absolute; width: 640px; height: 360px; left: 0px; top: 0px; z-index: 1;'>This content cannot be displayed because your browser does not support the HTML 5 canvas tag.</canvas>
+<script language='javascript'>
+document.getElementById("Untitled_z1_canvas").onclick= function() {location.assign('orgameall.html')}
+</script>
+</div>
+<script type="text/javascript">
+$(document).ready(function($){
+  var rd = Radi.documents['Untitled'];
+  var env = rd.getEnv();
+  rd.setupElements();
+  var autosize = function(){
+    var elInfo, els, el, elW, elH, x, y;
+    var winH = $(window).height();  var winW = $(window).width();
+  };
+  $(window).bind('load resize', autosize);
+  autosize();
+  rd.renderAtFrame(0); rd.start();
+});
+</script>
+
+</body>
+</html>
