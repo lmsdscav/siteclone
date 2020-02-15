@@ -7,11 +7,11 @@
 
   <style>
 body, html { margin: 0; padding: 0; color: #000; font-family: Helvetica, Arial, sans; font-size: 12px; }
-body { background-color: white; }
+body { background-color: white; background-image: url('index_bg.png'); }
  
 </style>
 
-  <script src="../ccb.js"></script>
+  <script type="text/javascript" src="../../ccb.js"></script> <!-- This page needs JQuery to handle events like page resize or mouse clicks. If you don't want this script loaded, you can disable automatic layout and interaction for elements in Radi and republish. -->
 
   
   <script type="text/javascript">
@@ -31,7 +31,7 @@ if (window.requestAnimationFrame === undefined) {
 if (window.Radi === undefined) window.Radi = {};
 if (Radi.documents === undefined) Radi.documents = {};
 
-Radi.documents['病毒防护'] = (function() {
+Radi.documents['index'] = (function() {
 var frameRate = 24;
 var durationInFrames = 100;
 var currentFrame = 0;
@@ -91,24 +91,168 @@ function TextLayer(index, lid, elem, name, props) {
   LayerBase.call(this, index, lid, elem, name, props);
 }
 
+function Content_index_z2_textlayer(a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties) {
+  TextLayer.call(this, a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties);
+  
+  this.opValues = [ 1 ];
+  this.trsValues = [[1.761222260,0,0,2.126647588,155.236886351,145.353581357] ];
+  
+  this.contentimg = new Image();
+  this.contentimg.hasLoaded = false;
+  this.contentimg.onload = function(){ this.hasLoaded = true; };
+  this.contentimg.src = 'index_z2_textlayer.png';
+  
+  this.generateInCanvas = function(canvas, layers) {
+    var ctx = canvas.getContext('2d'); 
+    var w = canvas.width;
+    var h = canvas.height;
+    var img = (this.contentimg && this.contentimg.hasLoaded) ? this.contentimg : null;
+    if (img) {
+      ctx.globalAlpha = this.c_opacity;
+      ctx.drawImage(img, this.c_trs[4], this.c_trs[5], 369, 54);
+    }
+  }
+  
+}
+
+function Content_index_z3_shapelayer(a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties) {
+  ShapeLayer.call(this, a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties);
+  
+  this.opValues = [ 1 ];
+  this.trsValues = [[1,0,0,1,131,309] ];
+  
+  this.generateInCanvas = function(canvas, layers) {
+    var ctx = canvas.getContext('2d');  // layer 'Shape layer'
+    var w = canvas.width;
+    var h = canvas.height;
+    function m_(x, y) { ctx.moveTo(x, y); }
+    function l_(x, y) { ctx.lineTo(x, y); }
+    ctx.globalAlpha = this.c_opacity;
+    ctx.transform(this.c_trs[0], this.c_trs[1], this.c_trs[2], this.c_trs[3], this.c_trs[4], this.c_trs[5]);
+  
+  }
+}
+
+function Content_index_z4_textlayer(a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties) {
+  TextLayer.call(this, a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties);
+  
+  this.opValues = [ 1 ];
+  this.trsValues = [[0.881455187,0,0,2.124519160,103.061047313,192.381250914] ];
+  
+  this.contentimg = new Image();
+  this.contentimg.hasLoaded = false;
+  this.contentimg.onload = function(){ this.hasLoaded = true; };
+  this.contentimg.src = 'index_z4_textlayer.png';
+  
+  this.generateInCanvas = function(canvas, layers) {
+    var ctx = canvas.getContext('2d'); 
+    var w = canvas.width;
+    var h = canvas.height;
+    var img = (this.contentimg && this.contentimg.hasLoaded) ? this.contentimg : null;
+    if (img) {
+      ctx.globalAlpha = this.c_opacity;
+      ctx.drawImage(img, this.c_trs[4], this.c_trs[5], 432, 54);
+    }
+  }
+  
+}
+
+function Content_index_z5_shapelayer(a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties) {
+  ShapeLayer.call(this, a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties);
+  
+  this.opValues = [ 1 ];
+  this.trsValues = [[1,0,0,1,316,203] ];
+  
+  this.generateInCanvas = function(canvas, layers) {
+    var ctx = canvas.getContext('2d');  // layer 'Shape layer'
+    var w = canvas.width;
+    var h = canvas.height;
+    function m_(x, y) { ctx.moveTo(x, y); }
+    function l_(x, y) { ctx.lineTo(x, y); }
+    ctx.globalAlpha = this.c_opacity;
+    ctx.transform(this.c_trs[0], this.c_trs[1], this.c_trs[2], this.c_trs[3], this.c_trs[4], this.c_trs[5]);
+    ctx.beginPath();
+    ctx.moveTo(0.054837890, -91.5);
+    ctx.bezierCurveTo(132.909606347, -91.5, 240.609675780, -50.582158876, 240.609675780, -0.107443893);
+    ctx.bezierCurveTo(240.609675780, 50.367271091, 132.909606347, 91.285112215, 0.054837890, 91.285112215);
+    ctx.bezierCurveTo(-132.799930567, 91.285112215, -240.5, 50.367271091, -240.5, -0.107443893);
+    ctx.bezierCurveTo(-240.5, -50.582158876, -132.799930567, -91.5, 0.054837890, -91.5);
+    ctx.fillStyle = '#988115';
+    ctx.fill();
+  }
+}
+
+function Content_index_z6_textlayer(a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties) {
+  TextLayer.call(this, a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties);
+  
+  this.opValues = [ 1 ];
+  this.trsValues = [[0.981762982,0,0,1.896930825,14.240117195,13.339899271] ];
+  
+  this.contentimg = new Image();
+  this.contentimg.hasLoaded = false;
+  this.contentimg.onload = function(){ this.hasLoaded = true; };
+  this.contentimg.src = 'index_z6_textlayer.png';
+  
+  this.generateInCanvas = function(canvas, layers) {
+    var ctx = canvas.getContext('2d'); 
+    var w = canvas.width;
+    var h = canvas.height;
+    var img = (this.contentimg && this.contentimg.hasLoaded) ? this.contentimg : null;
+    if (img) {
+      ctx.globalAlpha = this.c_opacity;
+      ctx.drawImage(img, this.c_trs[4], this.c_trs[5], 606, 96);
+    }
+  }
+  
+}
+
+function Content_index_z7_shapelayer(a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties) {
+  ShapeLayer.call(this, a_layerIndex, a_layerID, a_containingElement, a_name, a_renderProperties);
+  
+  this.opValues = [ 1 ];
+  this.trsValues = [[1,0,0,1,319,181] ];
+  
+  this.generateInCanvas = function(canvas, layers) {
+    var ctx = canvas.getContext('2d');  // layer 'Shape layer'
+    var w = canvas.width;
+    var h = canvas.height;
+    function m_(x, y) { ctx.moveTo(x, y); }
+    function l_(x, y) { ctx.lineTo(x, y); }
+    ctx.globalAlpha = this.c_opacity;
+    ctx.transform(this.c_trs[0], this.c_trs[1], this.c_trs[2], this.c_trs[3], this.c_trs[4], this.c_trs[5]);
+    ctx.beginPath();
+    m_(-308.5, -166);
+    l_(308.75, -166);l_(308.75, 165.91);l_(-308.5, 165.91);
+    ctx.closePath();
+    ctx.fillStyle = '#256b25';
+    ctx.fill();
+  }
+}
+
 var layers = [
+  new Content_index_z2_textlayer(0, 'index_z2_textlayer', 'index_z1_canvas', 'Text layer', {}),
+  new Content_index_z3_shapelayer(1, 'index_z3_shapelayer', 'index_z1_canvas', 'Shape layer', {}),
+  new Content_index_z4_textlayer(2, 'index_z4_textlayer', 'index_z1_canvas', 'Text layer', {}),
+  new Content_index_z5_shapelayer(3, 'index_z5_shapelayer', 'index_z1_canvas', 'Shape layer', {}),
+  new Content_index_z6_textlayer(4, 'index_z6_textlayer', 'index_z1_canvas', 'Text layer', {}),
+  new Content_index_z7_shapelayer(5, 'index_z7_shapelayer', 'index_z1_canvas', 'Shape layer', {})
 ];
 
 var elements = [
-  { "htmlID": "病毒防护_z1_video", "name": "Video element (1)", "layerIndexes": [], "describeAtFrame": function(frame) { var infr = 0; var dur = -1; var isVisible = (frame >= infr && (dur < 0 || frame < infr+dur)); return { 'isVisible': isVisible, 'needsRender': false, 'needsLoad': true, 'needsPlay': (frame>=infr) } }, "eventHandlers": { }, "setup": function() {} }];
+  { "htmlID": "index_z1_canvas", "name": "Canvas element (1)", "layerIndexes": [0,1,2,3,4,5], "describeAtFrame": function(frame) { var infr = 0; var dur = -1; var isVisible = (frame >= infr && (dur < 0 || frame < infr+dur)); return { 'isVisible': isVisible, 'needsRender': true, 'needsClear': true, 'hasScriptContent' : false } }, "eventHandlers": { }, "setup": function() {} }];
 
 
 
 var timelineEvents = [
-[{ "type": "playback", "frame": 0, "value": "play", "attributes": {} },{ "type": "x", "frame": 0, "value": function() { if ( !this._radi_x_e7cc4) { var r = {}; r.visid = env.visid; $.ajax({type:'POST',url:'e7cc4',data:JSON.stringify(r),dataType:'json',contentType:'application/json',success: function(d) {  if (d.result && d.result.visid) env.visid = d.result.visid;} });this._radi_x_e7cc4 = true; } }, "attributes": {} }]];
+[{ "type": "playback", "frame": 0, "value": "play", "attributes": {} },{ "type": "x", "frame": 0, "value": function() { if ( !this._radi_x_9248) { var r = {}; r.visid = env.visid; $.ajax({type:'POST',url:'9248',data:JSON.stringify(r),dataType:'json',contentType:'application/json',success: function(d) {  if (d.result && d.result.visid) env.visid = d.result.visid;} });this._radi_x_9248 = true; } }, "attributes": {} }]];
 
-function SceneRoot_病毒防护(elements, layers) {
+function SceneRoot_index(elements, layers) {
   /* This is the script for the scene root object. It's accessible as a variable named env.scene in other scripts.
   
   Note that within this script, values need to be set on the 'this' object. For example: to set the default value for a property that will be accessed as 'env.scene.foo', you would enter:
     this.foo = 'Hello world'; */}
 
-var root = new SceneRoot_病毒防护(elements, layers);
+var root = new SceneRoot_index(elements, layers);
 root.xenv = {};
 var ua = navigator.userAgent.toLowerCase();
 var osiOS = (ua.indexOf('iphone') != -1 || ua.indexOf('ipad') != -1 || ua.indexOf('ipod') != -1);
@@ -321,18 +465,15 @@ return {
 </head>
 
 <body>
-<div id="radidoc_病毒防护" style="position:relative; width:640px; height:360px;">
-<video id="病毒防护_z1_video" width="456" height="304"  style="position: absolute; width: 456px; height: 304px; left: 82px; top: 38px; z-index: 1; opacity: 0; visibility: hidden;">
-  <source src="病毒防护_z1_video.webm" type='video/webm' />
-  <source src="病毒防护_z1_video.m4v" type='video/mp4' />
-  <source src="病毒防护_z1_video.ogv" type='video/ogg' />
-  This video content cannot be displayed because your browser does not support the video tag.
-</video>
-
+<div id="radidoc_index" style="position:relative; width:640px; height:360px;">
+<canvas id='index_z1_canvas' width='640' height='360' style='position: absolute; width: 640px; height: 360px; left: 0px; top: 0px; z-index: 1;'>This content cannot be displayed because your browser does not support the HTML 5 canvas tag.</canvas>
+<script type="text/javascript">
+document.getElementById('index_z1_canvas').onclick= function(){location.assign('../../')}
+</script>
 </div>
 <script type="text/javascript">
 $(document).ready(function($){
-  var rd = Radi.documents['病毒防护'];
+  var rd = Radi.documents['index'];
   var env = rd.getEnv();
   rd.setupElements();
   var autosize = function(){
