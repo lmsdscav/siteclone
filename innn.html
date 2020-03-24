@@ -1,0 +1,82 @@
+
+    <script>
+    /*std::string filename = "../Data/ColorTransfer.txt";
+    std::string filename2 = "../Data/Opacity.txt";*/
+
+    QVector<QVariant> OpacityVec;
+    QFile file("24d.html");
+    if(!file.open(QIODevice::ReadOnly))
+    {
+         return -1;
+    }
+    QTextStream in(&file);
+    qDebug() << "begin:";
+    QJsonArray pointarr;
+    while(!in.atEnd()){
+        qreal tx,ty;
+        QString onecount = in.readLine();
+        std::stringstream linestream;
+        linestream << onecount.toStdString();
+        linestream >> tx >> ty;
+        qDebug() << QJsonValue( tx) << "," << QJsonValue(ty);
+//        OpacityVec.append(QVariant(tx));
+//        OpacityVec.append(QVariant(ty));
+        pointarr.append(QJsonValue(tx));
+        pointarr.append(QJsonValue(ty));
+        /*QStringList strlist = onecount.split(',');
+        OpacityVec.append(QVariant(strlist.at(0).trimmed().left(7).toDouble()));
+        OpacityVec.append(QVariant(strlist.at(1).trimmed().left(7).toDouble()));
+        OpacityVec.append(QVariant(0.5));
+        OpacityVec.append(QVariant(0));
+        qDebug() << QVariant(strlist.at(0).trimmed().left(7).toDouble()) << ","
+                  << QVariant(strlist.at(1).trimmed().left(7).toDouble()) << "--";*/
+    }
+    file.close();
+    qDebug() << "end--" << OpacityVec.size();
+    qDebug() << "all:" << pointarr;
+
+    QVector<QVariant> colorVec;
+/*    QFile file2("../../Data/ColorTransfer.txt");
+    if(!file2.open(QIODevice::ReadOnly))
+    {
+         return -1;
+    }
+    QTextStream in2(&file2);
+    while(!in2.atEnd()){
+        QString onecount = in2.readLine();
+        QStringList strlist = onecount.split(',');
+        colorVec.append(QVariant(strlist.at(0).trimmed().left(7).toDouble()));
+        colorVec.append(QVariant(strlist.at(1).trimmed().left(7).toDouble()));
+        colorVec.append(QVariant(strlist.at(2).trimmed().left(7).toDouble()));
+        colorVec.append(QVariant(strlist.at(3).trimmed().left(7).toDouble()));
+    }
+    file2.close();
+    qDebug() << "end2--" << colorVec.size();
+*/
+
+    QJsonObject json;
+    json.insert("ColorSpace","RGB");
+    json.insert("Name","Bone133");
+
+    QVariant points11(OpacityVec.toList());
+    json.insert("Points",QJsonValue(pointarr));
+    QVariant points22(colorVec.toList());
+    json.insert("RGBPoints",QJsonValue::fromVariant(points22));
+
+    QJsonArray arr;
+    arr.append(json);
+
+    QJsonDocument document1;
+    document1.setArray(arr);
+
+    QByteArray byteArray = document1.toJson(QJsonDocument::Compact);
+    qDebug() << "byteArray:" << byteArray;
+    QString strJson(byteArray);
+
+    QFile file22("./test11.json");
+    file22.open( QIODevice::ReadWrite | QIODevice::Append);
+    QTextStream out22(&file22);
+    out22 << strJson;
+    out22 << "\n";
+    file22.close();
+    </script>
