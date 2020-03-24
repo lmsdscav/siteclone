@@ -53,13 +53,33 @@ ss.onclick = function(){alert("如果没有反应请更换手机，请确认您�
 <a href='other/blockwater/3Dmofang/HTML5 3D魔方小游戏/index.html'><button style='height:100px;width:100px;display: inline-block;font-size: large;'>3D魔方</button></a>
 <script language="JavaScript">
 var sdccc = document.getElementById("sfox")
+<text id='htll' style='height:100px;width:100px;display: inline-block;font-size: large;'></text>
 sdccc.onclick = function(){
   //alert("__________________________________________ \n |有作品或建议等可发送到邮件  |       |  asasr.fly@foxmail.com                  | \n _________________________________________")
   location.assign('./site/lmsd/about.html')
   }
 document.getElementById('whas').onclick = function(){alert('这个玩意儿大部分设备不支持,目前使用OPPOR11Pluskt的Firefox是可以运转的')}
 </script>
-
+<script language="JavaScript">
+setInterval(function(){
+  var db=document.getElementById('htll')
+        var times=new Date()
+        var year=times.getFullYear()
+        var month=times.getMonth()
+        var day=times.getDate()
+        var zhou=times.getDay()
+        var hour=times.getHours()
+        var min=times.getMinutes()
+        var seconds=times.getSeconds()
+        var h=parseInt(hour)
+        if (h>12){
+            var ss =" 下午 "+String(h-12)
+        }else{
+            var ss =' 上午/中午: '+String(h)
+        }
+        db.innerHTML='欢迎您回来!<div>现在是'+year+'年'+month+'月'+day+'日'+zhou+'周'+ss+'点'+min+'分钟'+seconds+'秒</div>'
+    })
+</script>
 </div>
 <iframe width='640px' height='360px' src="time.html"></iframe>
   </body>
