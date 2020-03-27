@@ -111,6 +111,8 @@ setInterval(function(){
             ss =' 中午 '+String(h)
         }else if(h>18){
             ss =' 晚上 '+String(h-12)
+        }else if(h>=0 &&h<7){
+            ss =' 凌晨 '+String(h)
         }else{
             ss =' 上午 '+String(h)
         }
