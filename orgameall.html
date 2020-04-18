@@ -1,16 +1,15 @@
 <script language="javascript">
-function ext(){
-  inppp=prompt('真的要离开吗?OK离开,NO不离开(大写)')
-  if(inppp=='NO'){
-    window.open("./orgameall.html")
-  }else if(inppp=='OK'){
-    alert('操作成功')
-  }else{
-    alert('检测失败')
-    continue
-  }
-}
-
+    function ext() {
+        inppp = prompt('真的要离开吗?OK离开,NO不离开(大写)')
+        if (inppp == 'NO') {
+            window.open("./orgameall.html")
+        } else if (inppp == 'OK') {
+            alert('操作成功')
+        } else {
+            alert('检测失败')
+            continue
+        }
+    }
 </script>
 <!-- If you want to use the buttons on the bootstrap -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -22,115 +21,125 @@ function ext(){
 <script src="./dist/js/jquery.rippler.min.js"></script>
 
 <script language="JavaScript">
-$(document).ready(function() {
-   $(".rippler").rippler({ 
-     effectClass : 'rippler-effect' ,
-     effectSize : 16, // Default size (width & height) 
-     addElement : 'div', // e.g. 'svg'(feature) ,
-     duration : 400
-     }); });
+    $(document).ready(function() {
+        $(".rippler").rippler({
+            effectClass: 'rippler-effect',
+            effectSize: 16, // Default size (width & height) 
+            addElement: 'div', // e.g. 'svg'(feature) ,
+            duration: 400
+        });
+    });
 </script>
 <title>Lmsd官网小玩具</title>
+
 <body onunload='ext()'>
-   <style type="text/css">
-     button {
-        width: 200px;  
-        padding:8px;  
-        background-color: #59c42b;  
-        border-color: #c942c9;  
-        //color: #fff;  
-        -moz-border-radius: 10px;  
-        -webkit-border-radius: 10px;  
-        border-radius: 10px; /* future proofing */  
-        -khtml-border-radius: 10px; /* for old Konqueror browsers */  
-        text-align: center;  
-        vertical-align: middle;  
-        border: 1px solid transparent;  
-        font-weight: 900;  
-        font-size:100%  
-      }  
-   </style>
-<body background="tind61.jpg">
-<div class="***">
-  <button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;' id='test' TextSize='70'>测试按钮</button>
-  <button  disabled style='height:100px;width:100px;display: inline-block;font-size: large;textColor:#ffffff;' id="oe"><a href="#" disabled  style='height:100px;width:100px;display: inline-block;font-size: large;textColor:#000000;'>打开微信(正在维护)</a></button>
-      <script language="JavaScript">
-        
-        var sd = document.getElementById("test")
-        sd.onclick = function(){
-        alert("测试成功")}
-      </script>
-<img id='imgclick' class="btn btn-primary rippler rippler-default" src="timg.gif"></img>
-<script language="javascript">
-var ss = document.getElementById("oe")
-ss.onclick = function(){alert("如果没有反应请更换手机，请确认您安装了微信微信")}
-</script>
-<a href="or.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button  class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'Size="70px">点点解压</button></a>
-<a href="htor/index2.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>火焰游戏</button></a>
-<a href="ht2/index2.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>房子游戏</button></a>
-<a href="color/index2.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>颜色选择器</button></a>
-<a href="fms/index.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" Size="20" style='height:100px;width:100px;display: inline-block;font-size: large;'>火焰02</button></a>
-<a href="map/index.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>简略城市</button></a>
-  <a href="winXPmspaint/index2.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>画图</button></a>
-  <a href="tan/index2.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;' id='whas'>沙漏动画</button></a>
-  <a href="shekucai/index.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>炫酷模拟</button></a>
-  <a href="emj2/index.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>表情修改器</button></a>
-<a href="minew/" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>彩色网页</button></a>
-<a href='other/' style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>其他的</button></a>
-<a href="#"style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;' disabled >反馈(🚫)</button></a>
-<button class="btn btn-primary rippler rippler-default" id="sfox" style='height:100px;width:100px;display: inline-block;font-size: large;'> 关于</button>
-<button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;' id='clickguanliqi' >管理器</button>
-<a href='other/blockwater/html5_snake/html5_snake/index.html'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>贪吃蛇</button></a>
-<a href='other/blockwater/3Dmofang/HTML5 3D魔方小游戏/index.html'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>魔方</button></a>
-<text id='hmll' style='font-size:36px;background-color:#ffffff;'></text>
-<a href='#' ><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;' id='ccccccb'>页面太乱?前往主页2</button></a>
-<script language="JavaScript">
-var sdccc = document.getElementById("sfox")
-sdccc.onclick = function(){
-  //alert("__________________________________________ \n |有作品或建议等可发送到邮件  |       |  asasr.fly@foxmail.com                  | \n _________________________________________")
-  location.assign('./site/lmsd/about.html')
-  }
-document.getElementById('whas').onclick = function(){alert('这个玩意儿大部分设备不支持,目前使用OPPOR11Pluskt的Firefox是可以运转的')}
-</script>
-<script language="JavaScript">
-setInterval(function(){
-  var db=document.getElementById('hmll')
-        var times=new Date()
-        var year=times.getFullYear()
-        var month=times.getMonth()
-        var day=times.getDate()
-        var zhou=times.getDay()
-        var hour=times.getHours()
-        var min=times.getMinutes()
-        var seconds=times.getSeconds()
-        var h=parseInt(hour)
-        var ss=''
-        if (h>12 && h<19){
-            ss =' 下午 '+String(h-12)
-        }else if(h<13 && h>9){
-            ss =' 中午 '+String(h)
-        }else if(h>18){
-            ss =' 晚上 '+String(h-12)
-        }else if(h>=0 &&h<7){
-            ss =' 凌晨 '+String(h)
-        }else{
-            ss =' 上午 '+String(h)
+    <style type="text/css">
+        button {
+            width: 200px;
+            padding: 8px;
+            background-color: #59c42b;
+            border-color: #c942c9;
+            //color: #fff;  
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            /* future proofing */
+            -khtml-border-radius: 10px;
+            /* for old Konqueror browsers */
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid transparent;
+            font-weight: 900;
+            font-size: 100%
         }
-        db.innerHTML='欢迎!<div style="font-size:36px;background-color:#ffffff;"">现在是 '+year+' 年 '+month+' 月 '+day+' 日 '+zhou+' 周 '+ss+' 点 '+min+' 分 '+seconds+' 秒 </div>'
-    })
-</script>
-<script language="javascript">
-ssdchakan=document.getElementById('clickguanliqi')
-ssdchakan.onclick = function(){
-window.open ('./secret/index.html', 'newwindow', 'height=*, width=*, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no,status=no') 
-}
-</script>
-</div>
-<iframe width='640px' height='360px' src="time.html"></iframe>
-  </body>
+    </style>
+
+    <body background="tind61.jpg">
+        <div class="***">
+            <button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;' id='test' TextSize='70'>测试按钮</button>
+            <button disabled style='height:100px;width:100px;display: inline-block;font-size: large;textColor:#ffffff;' id="oe"><a href="#" disabled  style='height:100px;width:100px;display: inline-block;font-size: large;textColor:#000000;'>打开微信(正在维护)</a></button>
+            <script language="JavaScript">
+                var sd = document.getElementById("test")
+                sd.onclick = function() {
+                    alert("测试成功")
+                }
+            </script>
+            <img id='imgclick' class="btn btn-primary rippler rippler-default" src="timg.gif"></img>
+            <script language="javascript">
+                var ss = document.getElementById("oe")
+                ss.onclick = function() {
+                    alert("如果没有反应请更换手机，请确认您安装了微信微信")
+                }
+            </script>
+            <a href="or.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button  class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'Size="70px">点点解压</button></a>
+            <a href="htor/index2.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>火焰游戏</button></a>
+            <a href="ht2/index2.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>房子游戏</button></a>
+            <a href="color/index2.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>颜色选择器</button></a>
+            <a href="fms/index.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" Size="20" style='height:100px;width:100px;display: inline-block;font-size: large;'>火焰02</button></a>
+            <a href="map/index.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>简略城市</button></a>
+            <a href="winXPmspaint/index2.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>画图</button></a>
+            <a href="tan/index2.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;' id='whas'>沙漏动画</button></a>
+            <a href="shekucai/index.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>炫酷模拟</button></a>
+            <a href="emj2/index.html" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>表情修改器</button></a>
+            <a href="minew/" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>彩色网页</button></a>
+            <a href='other/' style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>其他的</button></a>
+            <a href="#" style='height:100px;width:100px;display: inline-block;font-size: large;'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;' disabled >反馈(🚫)</button></a>
+            <button class="btn btn-primary rippler rippler-default" id="sfox" style='height:100px;width:100px;display: inline-block;font-size: large;'> 关于</button>
+            <button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;' id='clickguanliqi'>管理器</button>
+            <a href='other/blockwater/html5_snake/html5_snake/index.html'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>贪吃蛇</button></a>
+            <a href='other/blockwater/3Dmofang/HTML5 3D魔方小游戏/index.html'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;'>魔方</button></a>
+            <text id='hmll' style='font-size:36px;background-color:#ffffff;'></text>
+            <a href='#'><button class="btn btn-primary rippler rippler-default" style='height:100px;width:100px;display: inline-block;font-size: large;' id='ccccccb'>页面太乱?前往主页2(还有更多好玩的等你哦)</button></a>
+            <script language="JavaScript">
+                var sdccc = document.getElementById("sfox")
+                sdccc.onclick = function() {
+                    //alert("__________________________________________ \n |有作品或建议等可发送到邮件  |       |  asasr.fly@foxmail.com                  | \n _________________________________________")
+                    location.assign('./site/lmsd/about.html')
+                }
+                document.getElementById('whas').onclick = function() {
+                    alert('这个玩意儿大部分设备不支持,目前使用OPPOR11Pluskt的Firefox是可以运转的')
+                }
+            </script>
+            <script language="JavaScript">
+                setInterval(function() {
+                    var db = document.getElementById('hmll')
+                    var times = new Date()
+                    var year = times.getFullYear()
+                    var month = times.getMonth()
+                    var day = times.getDate()
+                    var zhou = times.getDay()
+                    var hour = times.getHours()
+                    var min = times.getMinutes()
+                    var seconds = times.getSeconds()
+                    var h = parseInt(hour)
+                    var ss = ''
+                    if (h > 12 && h < 19) {
+                        ss = ' 下午 ' + String(h - 12)
+                    } else if (h < 13 && h > 9) {
+                        ss = ' 中午 ' + String(h)
+                    } else if (h > 18) {
+                        ss = ' 晚上 ' + String(h - 12)
+                    } else if (h >= 0 && h < 7) {
+                        ss = ' 凌晨 ' + String(h)
+                    } else {
+                        ss = ' 上午 ' + String(h)
+                    }
+                    db.innerHTML = '欢迎!<div style="font-size:36px;background-color:#ffffff;"">现在是 ' + year + ' 年 ' + month + ' 月 ' + day + ' 日 ' + zhou + ' 周 ' + ss + ' 点 ' + min + ' 分 ' + seconds + ' 秒 </div>'
+                })
+            </script>
+            <script language="javascript">
+                ssdchakan = document.getElementById('clickguanliqi')
+                ssdchakan.onclick = function() {
+                    window.open('./secret/index.html', 'newwindow', 'height=*, width=*, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no,status=no')
+                }
+            </script>
+        </div>
+        <iframe width='640px' height='360px' src="time.html"></iframe>
+    </body>
 </body>
 <script type="text/javascript">
-document.getElementById('ccccccb').onclick = function(){
-window.open ('./site/orgameall2.html', 'newwindow', 'height=100, width=100, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no,status=no')
-}
+    document.getElementById('ccccccb').onclick = function() {
+        //window.open('./site/orgameall2.html', 'newwindow', 'height=100, width=100, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no,status=no')
+        location.assign('./site/orgameall2.html')
+    }
 </script>
