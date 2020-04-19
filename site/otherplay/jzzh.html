@@ -1,0 +1,30 @@
+<!--进制转换器,有10转2,也有2转10-->
+<text style='height:100px;width:100px;font-size: xx-large;'>十进制转换二进制/二进制转换十进制</text>
+<div></div>
+<text>这里是10进制的输入框:</text><input id='tenj'></input>
+<div></div>
+<text>这里是2进制的输入框:</text><input id='twoj'></input>
+<div></div>
+<button id='tetotw'>10进制转2进制</button><button id='twtote'>2进制转10进制</button>
+<div></div>
+<script language='javascript'>
+    //厉害了老铁,你竟然看了我的代码
+    var tetotw = document.getElementById('tetotw')
+    var twtote = document.getElementById('twtote')
+    var twoj = document.getElementById('twoj')
+    var tenj = document.getElementById('tenj')
+    var x = 0
+    var c = 0
+    var doq = 0
+    tetotw.onclick = function() {
+        x = 0
+        doq = parseInt(tenj.value)
+        c = doq.toString(2)
+        twoj.value = c
+    }
+    twtote.onclick = function() {
+        x = 0
+        c = parseInt(twoj.value, 2)
+        tenj.value = c
+    }
+</script>
