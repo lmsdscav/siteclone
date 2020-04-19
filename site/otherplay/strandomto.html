@@ -1,0 +1,28 @@
+<!--字符串反复工具-->
+<text style='height:100px;width:100px;font-size: xx-large'>请输入</text>
+<div></div>
+<text>文本</text><input id='txs'></input>
+<div></div>
+<text>次数</text><input id='txx'></input>
+<div></div>
+<button id='ret'>开始</button>
+<div></div>
+<text id='jg'></text>
+<script language='javascript'>
+    var 文本 = document.getElementById('txs')
+    var 次数 = document.getElementById('txx')
+    var 按钮 = document.getElementById('ret')
+    var 结果 = document.getElementById('jg')
+    var 次数循环 = 0
+    var 结果文本 = ''
+    按钮.onclick = function() {
+        次数循环 = 0
+        结果文本 = ''
+        while (次数循环 < parseInt(次数.value)) {
+            结果文本 += 文本.value
+            次数循环 += 1
+        }
+        结果.innerHTML = 结果文本
+
+    }
+</script>
